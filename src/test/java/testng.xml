@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="1" name="C:/Users/DELL/IdeaProjects/APIAutomation/src/test/java/tests">
+        <classes>
+            <class name="tests.ExampleTest">
+             <!--   <methods>
+                    <include name="testUserDetailsAreReturned"/>
+                    <include name="testUserCareerDetailsAreReturned"/>
+                </methods>-->
+            </class>
+        </classes>
+    </test>
+</suite>
