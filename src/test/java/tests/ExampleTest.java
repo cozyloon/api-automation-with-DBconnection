@@ -31,7 +31,7 @@ public class ExampleTest extends TestBase {
         UserResponseDetails responseBody = body.as(UserResponseDetails.class);
         softAssert.assertEquals(responseBody.getUserId(),ID , INVALID_ID);
         softAssert.assertEquals(responseBody.getTitle(), TITLE, INVALID_TITLE);
-        softAssert.assertEquals(response.statusCode(), 200, VALID_STATUS_CODE_NOT_FOUND);
+        softAssert.assertEquals(response.statusCode(), 201, VALID_STATUS_CODE_NOT_FOUND);
         softAssert.assertAll();
     }
 
