@@ -1,5 +1,8 @@
 package util;
 
+import models.CareerResponseDetails;
+import models.DBDetails;
+
 import java.sql.*;
 
 public class DBHelper {
@@ -70,5 +73,50 @@ public class DBHelper {
             } catch (SQLException e) {
                 LoggerUtil.logERROR(SQL_ERROR, e);
             }
+    }
+
+/*    public DBDetails updateDetails(int id) {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        DBDetails dbDetails = new DBDetails();
+
+        String query = "update table set name='example' where id=?";
+        try {
+            connection = getConnection();
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            LoggerUtil.logERROR(SQL_ERROR, e);
+        } finally {
+            executeDBPostStepsWithLoggers(connection, preparedStatement);
+        }
+        return dbDetails;
+    }*/
+
+    public DBDetails getDetails(int id) {
+        ResultSet resultSet = null;
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        DBDetails dbDetails = new DBDetails();
+
+        String query = "select name,address,age from personalDetails where id=?";
+        try {
+            connection = getConnection();
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, id);
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                dbDetails.setName(resultSet.getString("name"));
+                dbDetails.setAddress(resultSet.getString("address"));
+                dbDetails.setAge(resultSet.getInt("age"));
+            }
+        } catch (SQLException e) {
+            LoggerUtil.logERROR(SQL_ERROR, e);
+        } finally {
+            executeDBPostStepsWithLoggers(resultSet, connection, preparedStatement);
+        }
+        return dbDetails;
     }
 }
