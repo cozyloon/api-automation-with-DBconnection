@@ -23,7 +23,6 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>./src/test/testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                    <forkMode>never</forkMode>
                 </configuration>
             </plugin>
         </plugins>
