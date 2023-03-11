@@ -1,6 +1,7 @@
 package util;
 
 import org.testng.annotations.BeforeMethod;
+import java.lang.reflect.Method;
 import org.testng.annotations.BeforeClass;
 import org.testng.asserts.SoftAssert;
 
