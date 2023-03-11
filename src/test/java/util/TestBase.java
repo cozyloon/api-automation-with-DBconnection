@@ -19,6 +19,6 @@ public class TestBase {
      
     @BeforeMethod
     public void beforeTest(Method method) {
-        EzConfig.logINFO(method.getName());
+        LoggerUtil.logINFO(method.getName());
     }
 }
