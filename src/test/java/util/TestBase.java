@@ -9,8 +9,8 @@ public class TestBase {
     public SoftAssert softAssert;
     public DBHelper dbHelper =new DBHelper(DB_URL,DB_USERNAME,DB_PASSWORD);
 
-    @BeforeMethod
-    public void beforeTest() {
+    @BeforeClass
+    public void beforeClass() {
         LoggerUtil.logINFO("TestClass Running " + this.getClass().toString());
         this.softAssert = new SoftAssert();
     }
