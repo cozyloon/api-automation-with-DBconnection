@@ -5,6 +5,8 @@
         <classes>
             <class name="tests.ExampleTest">
                 <methods>
+                    <include name="testUserDetailsAreReturned"/>
+                    <include name="testUserCareerDetailsAreReturned"/>
                     <include name="testDbConnection"/>
                 </methods>
             </class>
