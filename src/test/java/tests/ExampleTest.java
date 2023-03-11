@@ -37,7 +37,7 @@ public class ExampleTest extends TestBase {
         UserResponseDetails userResponseDetails = ResponseUtil.mapResponseToModel(response, UserResponseDetails.class);
         softAssert.assertEquals(userResponseDetails.getUserId(), ID, INVALID_ID);
         softAssert.assertEquals(userResponseDetails.getTitle(), TITLE, INVALID_TITLE);
-        softAssert.assertEquals(response.statusCode(), 201, VALID_STATUS_CODE_NOT_FOUND);
+        softAssert.assertEquals(response.statusCode(), 200, VALID_STATUS_CODE_NOT_FOUND);
         softAssert.assertAll();
     }
 
