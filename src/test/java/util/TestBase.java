@@ -1,5 +1,6 @@
 package util;
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.asserts.SoftAssert;
 
@@ -13,5 +14,10 @@ public class TestBase {
     public void beforeClass() {
         LoggerUtil.logINFO("TestClass Running " + this.getClass().toString());
         this.softAssert = new SoftAssert();
+    }
+     
+    @BeforeMethod
+    public void beforeTest(Method method) {
+        EzConfig.logINFO(method.getName());
     }
 }
