@@ -1,6 +1,5 @@
 package util;
 
-import models.CareerResponseDetails;
 import models.DBDetails;
 
 import java.sql.*;
@@ -75,7 +74,23 @@ public class DBHelper {
             }
     }
 
-/*    public DBDetails updateDetails(int id) {
+    public void executeDBPostStepsWithLoggers(Connection connection, PreparedStatement preparedStatement) {
+
+        if (preparedStatement != null)
+            try {
+                preparedStatement.close();
+            } catch (SQLException e) {
+                LoggerUtil.logERROR(SQL_ERROR, e);
+            }
+        if (connection != null)
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                LoggerUtil.logERROR(SQL_ERROR, e);
+            }
+    }
+
+    public DBDetails updateDetails(int id) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         DBDetails dbDetails = new DBDetails();
@@ -92,7 +107,7 @@ public class DBHelper {
             executeDBPostStepsWithLoggers(connection, preparedStatement);
         }
         return dbDetails;
-    }*/
+    }
 
     public DBDetails getDetails(int id) {
         ResultSet resultSet = null;
